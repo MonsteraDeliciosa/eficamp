@@ -1,4 +1,9 @@
 input {
   background: $input-background;
   padding: $input-padding;
+  color: $input-text;
+  border: none;
+  &:focus {
+    border: 1px solid $input-focus;
+  }
 }

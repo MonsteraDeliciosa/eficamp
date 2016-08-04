@@ -1,0 +1,11 @@
+.btn {
+  padding: $button-padding;
+  .cta-btn {
+    background: $button-cta-body;
+    color: $button-cta-text;
+  }
+  .back-btn {
+    background: $button-back-body;
+    color: $button-back-text;
+  }
+}
