@@ -3,6 +3,7 @@ input {
   padding: $input-padding;
   color: $input-text;
   border: none;
+  border-radius: $fields-border-radius;
   &:focus {
     border: 1px solid $input-focus;
   }
