@@ -1,6 +1,11 @@
 .btn {
+    &input [type="submit"],
+    input [type="button"] {
+        border-radius: $buttons-border-radius !important;
+    }
     padding: $button-padding-top $button-padding;
     text-transform: uppercase;
+    border-radius: $buttons-border-radius;
     &.cta-btn {
         min-width: 120px;
         background: $button-cta-body;

@@ -1,10 +1,15 @@
 .user-container {
+    position: relative;
     background: $lead-body;
     border: 1px solid $fields-border-color;
     border-radius: $fields-border-radius;
-    padding: $padding-x $padding-y;
+    padding: $padding-x*2 $padding-y $padding-x;
     margin-bottom: $content-top-margin;
+    margin-top: 130px;
     .user-img {
+        position: absolute;
+        top: -50px;
+        left: 40%;
         width: 100px;
         height: 100px;
         border-radius: 50px;
@@ -25,14 +30,14 @@
         display: inline;
     }
     .user-number {
-      margin:10px;
+        margin: 10px;
     }
     .user-close {
-      height: 30px;
-      width: 30px;
-      border-radius: 15px;
-      // padding: 20px;
-      background: $lead-body-lighter;
-      margin: 10px;
+        height: 30px;
+        width: 30px;
+        border-radius: 15px;
+        // padding: 20px;
+        background: $lead-body-lighter;
+        margin: 10px;
     }
 }
