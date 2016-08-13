@@ -1,9 +1,9 @@
 .user-container {
-  background: $lead-body;
-  border: 1px solid $fields-border-color;
-  border-radius: $fields-border-radius;
-  padding: $padding-x $padding-y;
-  margin-bottom: $content-top-margin;
+    background: $lead-body;
+    border: 1px solid $fields-border-color;
+    border-radius: $fields-border-radius;
+    padding: $padding-x $padding-y;
+    margin-bottom: $content-top-margin;
     .user-img {
         width: 100px;
         height: 100px;
@@ -19,5 +19,20 @@
             // margin-left: auto;
             // margin-right: auto;
         }
+    }
+    .user-close,
+    .user-id {
+        display: inline;
+    }
+    .user-number {
+      margin:10px;
+    }
+    .user-close {
+      height: 30px;
+      width: 30px;
+      border-radius: 15px;
+      // padding: 20px;
+      background: $lead-body-lighter;
+      margin: 10px;
     }
 }

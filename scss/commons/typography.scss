@@ -5,10 +5,12 @@ h1 {
     color: $header;
 }
 h2 {
+      font-family: 'Roboto Condensed', sans-serif !important;
     // font-family: 'Roboto', sans-serif !important;
     color: $header;
     &.user-id {
         font-size: 14px;
+        font-weight: bold;
     }
 }
 p {
