@@ -1,5 +1,10 @@
 .input-container {
+  input {
+    width: 100%;
+    max-width: 400px;
+  }
     input, img {
         display: inline;
+        margin: 5px;
     }
 }
