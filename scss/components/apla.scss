@@ -2,4 +2,6 @@
   background: $lead-body;
   color: $header;
   margin-top: $content-top-margin;
+  padding: $padding-y $padding-x $padding-big-y;
+  border-radius: $fields-border-radius;
 }

@@ -1,0 +1,23 @@
+.user-container {
+  background: $lead-body;
+  border: 1px solid $fields-border-color;
+  border-radius: $fields-border-radius;
+  padding: $padding-x $padding-y;
+  margin-bottom: $content-top-margin;
+    .user-img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50px;
+        background: #fff;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: $content-top-margin/2;
+        img {
+            height: 60px;
+            width: auto;
+            margin-top: 20px;
+            // margin-left: auto;
+            // margin-right: auto;
+        }
+    }
+}

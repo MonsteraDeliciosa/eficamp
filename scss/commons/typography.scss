@@ -1,15 +1,18 @@
 h1 {
   font-size: 2.5em;
-  font-family: $roboto-condesed-light;
+  font-family: 'Roboto', sans-serif !important;
   color: $header;
 }
 h2 {
-  font-size: 2em;
-  font-family: $roboto-condesed-light;
+  font-family: 'Roboto', sans-serif !important;
   color: $header;
+  &.user-id {
+      font-size: 14px;
+  }
 }
 p {
   font-size: 16px;
-  font-family: $roboto-condesed-light;
-  color:  $lead-body;
+  font-family: 'Roboto', sans-serif !important;
+  color:  $header;
+
 }

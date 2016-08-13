@@ -1,0 +1,16 @@
+.logo-container {
+    width: 160px;
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: $content-top-margin;
+    // margin-bottom: $content-top-margin;
+    background: transparent;
+    border: 1px solid $fields-border-color;
+    border-radius: $fields-border-radius;
+    // padding: $padding-y;
+    @media only screen and (min-width: 40.063em) {
+        float: right;
+    }
+}
