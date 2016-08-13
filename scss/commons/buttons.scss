@@ -1,10 +1,13 @@
 .btn {
-  padding: $button-padding;
-  .cta-btn {
+  padding: $button-padding-top $button-padding;
+  text-transform: uppercase;
+  &.cta-btn {
+    min-width: 120px;
     background: $button-cta-body;
     color: $button-cta-text;
   }
-  .back-btn {
+  &.back-btn {
+    min-width: 120px;
     background: $button-back-body;
     color: $button-back-text;
   }
