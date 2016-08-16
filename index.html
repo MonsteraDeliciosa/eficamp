@@ -9,6 +9,7 @@
   <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/app.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 </head>
 
 <body>
@@ -46,6 +47,26 @@
                 <div class="buttons-container">
                   <input type="button" class="btn back-btn" value="select other" />
                   <input type="submit" class="btn cta-btn" value="go" />
+                  <script>
+                    $('.cta-btn').on('click', function() {
+                      $.ajax({
+                        type: "post",
+                        data: {
+                          login: "efi",
+                          password: "camp"
+                        },
+                        url: "https://efigence-camp.herokuapp.com/api/login",
+                        error: function(response) {
+                          console.log(response.responseText);
+                          console.log('error!!!!');
+                        },
+                        success: function(response) {
+                          console.log(response);
+                          console.log('success!!!!');
+                        }
+                      });
+                    });
+                  </script>
                 </div>
               </div>
             </div>
