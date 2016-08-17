@@ -41,19 +41,23 @@
                   </div>
                 </div>
                 <div class="input-container">
-                  <input class="" type="password" />
+                  <input id="password" class="" type="password" />
                   <img class="icon" src="img/keyboard-icon.png" />
                 </div>
                 <div class="buttons-container">
                   <input type="button" class="btn back-btn" value="select other" />
                   <input type="submit" class="btn cta-btn" value="go" />
                   <script>
+                    $('#password').on('blur', function () {
+                      console.log($(this).val());
+                    });
+
                     $('.cta-btn').on('click', function() {
                       $.ajax({
                         type: "post",
                         data: {
                           login: "efi",
-                          password: "camp"
+                          password: $('#password').val()
                         },
                         url: "https://efigence-camp.herokuapp.com/api/login",
                         error: function(response) {
