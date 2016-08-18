@@ -47,30 +47,6 @@
                 <div class="buttons-container">
                   <input type="button" class="btn back-btn" value="select other" />
                   <input type="submit" class="btn cta-btn" value="go" />
-                  <script>
-                    $('#password').on('blur', function () {
-                      console.log($(this).val());
-                    });
-
-                    $('.cta-btn').on('click', function() {
-                      $.ajax({
-                        type: "post",
-                        data: {
-                          login: "efi",
-                          password: $('#password').val()
-                        },
-                        url: "https://efigence-camp.herokuapp.com/api/login",
-                        error: function(response) {
-                          console.log(response.responseText);
-                          console.log('error!!!!');
-                        },
-                        success: function(response) {
-                          console.log(response);
-                          console.log('success!!!!');
-                        }
-                      });
-                    });
-                  </script>
                 </div>
               </div>
             </div>
