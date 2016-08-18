@@ -1,11 +1,33 @@
 .input-container {
-  width: 100%;
-  input {
     width: 100%;
-    max-width: 400px;
-  }
-    input, img {
+    position: relative;
+    input {
+        width: 100%;
+        max-width: 400px;
+    }
+    img,
+    input {
         display: inline;
         // margin: 5px;
+    }
+    .password-container {
+        display: inline;
+        position: relative;
+        width: 100%;
+        max-width: 400px;
+        .error-label {
+            display: none;
+            position: absolute;
+            top: 29px;
+            left: 0;
+            width: 100%;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 35px;
+            background: $error;
+            color: #fff;
+            padding: 5px;
+        }
     }
 }

@@ -24,14 +24,17 @@ var app = {
                 },
                 url: "https://efigence-camp.herokuapp.com/api/login",
                 error: function(response) {
-                    window.location = "http://nooooooooooooooo.com";
+                    // window.location = "http://nooooooooooooooo.com";
                     console.log(response.responseText);
                     console.log('error!!!!');
+                    $('#password').addClass('error');
+                    $('.error-label').slideToggle();
                 },
                 success: function(response) {
                     window.location = "http://www.nyan.cat";
                     console.log(response);
                     console.log('success!!!!');
+                    // $('#password').addClass('success');
                 }
             });
         });

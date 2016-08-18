@@ -1,10 +1,27 @@
 input {
-  background: $input-background;
-  padding: $input-padding;
-  color: $input-text;
-  border: none;
-  border-radius: $fields-border-radius;
-  &:focus {
-    border: 1px solid $input-focus;
-  }
+    background: $input-background;
+    padding: $input-padding;
+    color: $input-text;
+    border: none;
+    border-radius: $fields-border-radius;
+    &:focus {
+        border: 1px solid $input-focus;
+    }
+    &.error {
+        border: 2px solid $error;
+        position: relative;
+        margin-bottom: 40px;
+        // &:after {
+        //   display:block;
+        //   position: absolute;
+        //   top:0px;
+        //   left:0px;
+        //   background: $error;
+        //   color:#fff;
+        //   padding:5px;
+        // }
+    }
+    &.success {
+        border: 2px solid $success;
+    }
 }
