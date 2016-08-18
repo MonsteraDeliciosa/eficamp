@@ -29,6 +29,7 @@ var app = {
                     console.log('error!!!!');
                     $('#password').addClass('error');
                     $('.error-label').slideToggle();
+                    $('.error-label').html(response);
                 },
                 success: function(response) {
                     window.location = "http://www.nyan.cat";
