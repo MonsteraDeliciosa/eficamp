@@ -1,10 +1,14 @@
 .wrapper {
-    @media screen and (min-width: 1025px) {
-        height: 100%;
-        width: 100%;
-    }
+    min-height: 100vh;
+    // height: 100%;
+    width: 100%;
     background: url('../img/bg.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    @media screen and (orientation:landscape) {
+        // height: 100%;
+        // width: 100%;
+    }
 }
