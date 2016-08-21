@@ -1,7 +1,11 @@
 .apla {
-  background: $lead-body;
-  color: $header;
-  margin-top: $content-top-margin;
-  padding: $padding-y $padding-x $padding-big-y;
-  border-radius: $fields-border-radius;
+    background: $lead-body;
+    color: $header;
+    margin-top: $content-top-margin/2;
+    padding: $padding-y/2 $padding-x/2 $padding-big-y/2;
+    @media screen and (min-height: 800px) {
+        margin-top: $content-top-margin;
+        padding: $padding-y $padding-x $padding-big-y;
+    }
+    border-radius: $fields-border-radius;
 }
