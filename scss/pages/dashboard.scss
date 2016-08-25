@@ -1,0 +1,11 @@
+.dashboard-wrapper {
+  min-height: 100vh;
+  // height: 100%;
+  width: 100%;
+  background: $dashboard-bg;
+}
+.navigation-wrapper {
+  background: $dashboard-nav;
+  width: 100%;
+  min-height: 240px;
+}
