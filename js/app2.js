@@ -1,3 +1,7 @@
+var config = {
+    baseApi: "https://efigence-camp.herokuapp.com/api/"
+};
+
 sendAjax = function(endpoint, method, data, sCallback, eCallback) {
     $.ajax({
             method: method,

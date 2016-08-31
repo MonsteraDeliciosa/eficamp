@@ -1,8 +1,8 @@
 'use strict';
-
 var config = {
     baseApi: "https://efigence-camp.herokuapp.com/api/"
 };
+
 
 var app = {
     init: function() {
@@ -16,31 +16,27 @@ var app = {
     },
 
     apiLogin: function() {
-
         $('#login').on('submit', function(e) {
-          e.preventDefault();
+            e.preventDefault();
             $.ajax({
                 type: "post",
                 data: {
                     login: "efi",
                     password: $('#password').val()
                 },
-                url: "https://efigence-camp.herokuapp.com/api/login",
+                url: config.baseApi + "login",
                 error: function(response) {
-                    // window.location = "http://nooooooooooooooo.com";
-                    console.log(response.responseText);
-                    // console.log('error!!!!');
-                    console.log(response.data);
+                    let jsonResponse = JSON.parse(response.responseText),
+                        errorMessage = jsonResponse.message;
                     $('#password').addClass('error');
-                    $('.error-label').slideToggle();
-                    $('.error-label').html(response);
+                    $('.error-label').fadeIn('slow');
+                    $('.error-label').html(errorMessage);
                 },
                 success: function(response) {
-                    // $('#login').submit();
                     window.location = "dashboard.html";
+                    $('.error-label').fadeOut('slow');
                     console.log(response);
-                    // console.log('success!!!!');
-                    // $('#password').addClass('success');
+                    console.log(config.baseApi);
                 }
             });
         });
@@ -82,5 +78,6 @@ var app = {
 };
 
 $(document).ready(function() {
+    // config.init();
     app.init();
 });
