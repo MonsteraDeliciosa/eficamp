@@ -1,0 +1,12 @@
+.list-component {
+  height: 400px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background: $products-history-bg;
+  ul {
+    li {
+      list-style: none;
+      padding: $field-padding
+    }
+  }
+}
