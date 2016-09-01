@@ -9,6 +9,7 @@ var app = {
         this.foundation();
         this.apiLogin();
         // this.sendAjax();
+        this.dashboardData();
     },
 
     foundation: function() {
@@ -54,15 +55,45 @@ var app = {
     //         .error(function(error) {
     //             eCallback(msg);
     //         })
-    //     }
+    // },
 
-    //     error = function(msg) {
+    dashboardData: function() {
+        function sendAjax(endpoint, method, data, sCallback, eCallback) {
+            $.ajax({
+                    method: method,
+                    url: config.baseApi + endpoint,
+                    data: data,
+                })
+                .done(function(msg) {
+                    sCallback(msg);
+                })
+                .error(function(error) {
+                    eCallback(msg);
+                })
+        }
+
+        var success = function(msg) {
+            console.log(msg);
+        }
+        var error = function(msg) {
+            console.log(msg);
+        }
+
+        sendAjax("data/history", "get", "content", success, error);
+    }
+
+    //   let error = function(msg) {
     //     console.log(msg);
     // }
     //
-    //     success = function(msg) {
+    //   let  success = function(msg) {
     //     console.log(msg);
     // }
+    // $(document).ready(function () {
+    // sendAjax("data/history", "get", "content", success, error);
+    // });
+
+
 
     //     $('#login').on('submit', sendAjax("login", "POST", {
     //     login,
