@@ -19,45 +19,54 @@
         <div class="row">
           <div class="small-12 medium-4 large-4 columns">
             <div class="user-navigation">
-              <img class="square-img" src="dist/img/efi_logo_small.png" alt="efi3 logo" />
-              <img class="square-img" src="dist/img/user_square.png" alt="user avatar" />
+              <div class="square-box logo-box">
+              </div>
+              <div class="square-box user-box">
+              </div>
             </div>
           </div>
           <div class="small-12 medium-4 medium-offset-1 large-4 large-offset-1 columns">
-            <div class="row">
-              <div class="small-3 columns">
-                <div class="nav-box active">
-                  <img class="nav-img" src="dist/img/home.png" alt="home" />
-                  <a class="nav-link" href="#" alt="home">home</a>
+            <div class="pages-navigation">
+              <div class="row">
+                <div class="small-3 columns p0 m0">
+                  <div class="nav-box text-center">
+                    <img class="nav-img" src="dist/img/home.png" alt="home" />
+                    <a class="nav-link" href="#" alt="home">home</a>
+                  </div>
                 </div>
-              </div>
-              <div class="small-3 columns">
-                <div class="nav-box">
-                  <img class="nav-img" src="dist/img/analyse.png" alt="analyse" />
-                  <a class="nav-link" href="#" alt="analyse">analyse</a>
+                <div class="small-3 columns p0 m0">
+                  <div class="nav-box text-center">
+                    <img class="nav-img" src="dist/img/analyse.png" alt="analyse" />
+                    <a class="nav-link" href="#" alt="analyse">analyse</a>
+                  </div>
                 </div>
-              </div>
-              <div class="small-3 columns">
-                <div class="nav-box">
-                  <img class="nav-img" src="dist/img/plan.png" alt="plan" />
-                  <a class="nav-link" href="#" alt="plan">plan</a>
+                <div class="small-3 columns p0 m0">
+                  <div class="nav-box text-center">
+                    <img class="nav-img" src="dist/img/plan.png" alt="plan" />
+                    <a class="nav-link" href="#" alt="plan">plan</a>
+                  </div>
                 </div>
-              </div>
-              <div class="small-3 columns">
-                <div class="nav-box">
-                  <img class="nav-img" src="dist/img/earn.png" alt="earn" />
-                  <a class="nav-link" href="#" alt="earn">earn</a>
+                <div class="small-3 columns p0 m0">
+                  <div class="nav-box text-center">
+                    <img class="nav-img" src="dist/img/earn.png" alt="earn" />
+                    <a class="nav-link" href="#" alt="earn">earn</a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="small-12 medium-1 large-1 end columns">
+          <div class="small-12 medium-1 columns">
             <div class="row">
               <div class="small-6 columns">
-                <img class="nav-img" src="dist/img/yyyy.png" alt="efi3 logo" />
+                <div class="menu-box">
+                  <img class="nav-img" src="dist/img/search.png" alt="Search" />
+                </div>
+
               </div>
               <div class="small-6 columns">
-                <img class="nav-img" src="dist/img/yyyy.png" alt="efi3 logo" />
+                <div class="menu-box">
+                  <img class="nav-img" src="dist/img/login.png" alt="Logout" />
+                </div>
               </div>
             </div>
           </div>
@@ -67,7 +76,7 @@
   </nav>
 
   <main class="dashboard-wrapper">
-    <section>
+    <section class="section">
       <div class="row">
         <div class="small-12 columns">
           <div class="row">
@@ -75,16 +84,19 @@
               <h1>Finance life stream</h1>
               <div class="row">
                 <div class="small-4 columns">
-                  <h2>Balance</h2>
-                  <span>6424387643287</span>
+                  <h2 class="lead">Balance</h2>
+                  <span class="js-getDataStream balance">
+                  </span><span class="currency"> PLN</span>
                 </div>
                 <div class="small-4 columns">
-                  <h2>Balance</h2>
-                  <span>6424387643287</span>
+                  <h2 class="lead">Finance stream</h2>
+                  <span class="js-getDataStream financeStream">
+                  </span><span class="currency"> PLN</span>
                 </div>
                 <div class="small-4 columns">
-                  <h2>Balance</h2>
-                  <span>6424387643287</span>
+                  <h2 class="lead">Scheduled payments</h2>
+                  <span class="js-getDataStream scheduledPayments">
+                  </span><span class="currency"> PLN</span>
                 </div>
               </div>
             </div>
@@ -119,10 +131,11 @@
               <li>
                 <div class="row">
                   <div class="small-2 columns">
-                    date
+                    <span class="js-getData date">date</span>
                   </div>
                   <div class="small-8 columns">
-                    stuff
+                    <span class="js-getData description">description</span>
+                    <span class="js-getData category">category</span>
                   </div>
                   <div class="small-2 columns">
                     $$$

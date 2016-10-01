@@ -2,29 +2,94 @@ nav {
   &.navigation-wrapper {
     background: $dashboard-nav;
     width: 100%;
-    min-height: 120px;
-    .nav-box {
-      height: 100%;
-      width: 100%;
+    // min-height: 120px;
+    .user-navigation {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      &:hover {
-        background: $active-field;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      .square-box {
+        display: inline-block;
+        height: 80px;
+        width: 80px;
+        border: 1px solid #fff;
+        border-radius: $buttons-border-radius;
+        margin: 10px 5px;
+
+        &.logo-box {
+          background: url('../img/efi_logo.png');
+          background-repeat: no-repeat;
+          background-size: 70% auto;
+          background-position: center;
+        }
+
+        &.user-box {
+          background: url('../img/user-nav.jpg');
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        img {
+          height: auto;
+          width: 70%;
+          display: table-cell;
+          vertical-align: middle;
+        }
       }
     }
-    .active {
-      position: relative;
-      background: $active-field;
-      &:after {
-        width: 10px;
-        height: 10px;
-        border-radius:5px;
-        position: absolute;
-        bottom: -5px;
-        right: 20px;
+
+    .pages-navigation {
+      text-transform: uppercase;
+      color: $navigation-text;
+
+      a {
+        color: $navigation-text;
       }
+
+      .nav-box {
+        height: 100px;
+        // width: 100%;
+        // display: flex;
+        // flex-direction: column;
+        // align-items: flex-end;
+        // align-content: flex-end;
+        // justify-content: center;
+        // padding: 15px;
+        &:hover {
+          background: $active-field;
+        }
+
+        .nav-img {
+          width: auto;
+          height: 50%;
+          // margin-left: auto;
+          // margin-right: auto;
+          margin: 10px auto;
+        }
+      }
+
+      .active {
+        position: relative;
+        background: $active-field;
+
+        &:after {
+          width: 10px;
+          height: 10px;
+          border-radius: 5px;
+          position: absolute;
+          bottom: -5px;
+          right: 20px;
+        }
+      }
+    }
+
+    .menu-box {
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &:()
     }
   }
 }
