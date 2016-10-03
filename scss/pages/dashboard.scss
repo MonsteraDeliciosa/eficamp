@@ -3,6 +3,39 @@
   // height: 100%;
   width: 100%;
   background: $dashboard-bg;
+
+  button {
+    &.cta {
+      background: $cta-btn;
+      padding: 10px 20px;
+      margin: 0 5px;
+      text-transform: uppercase;
+      border-radius: $buttons-border-radius;
+      color: $cta-text;
+    }
+  }
+}
+
+.buttons-container {
+  width: 100px;
+  background: #fff;
+  padding: 5px;
+  margin: 20px 5px;
+  border-radius: $buttons-border-radius;
+
+  button {
+    &.cta {
+      background: #fff;
+      padding: 5px;
+      margin: 0 5px;
+      text-transform: uppercase;
+      border-radius: $buttons-border-radius;
+      color: #000;
+      &.active {
+          background: $success;
+      }
+    }
+  }
 }
 
 .products-history {
