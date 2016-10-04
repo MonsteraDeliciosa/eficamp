@@ -16,9 +16,13 @@ h2 {
   color: $header;
 
   &.lead{
-    font-size: 1.5rem;
+    font-size: 1rem;
     line-height: 1;
     font-weight: normal;
+
+    @include breakpoint(medium) {
+      font-size: 1.5rem;
+    }
   }
 
   &.user-id {

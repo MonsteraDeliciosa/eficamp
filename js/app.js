@@ -134,45 +134,91 @@ var app = {
                 })
         };
 
+        var list = $('.clone-list');
+
+        var dateField = $('.date');
+        var descriptionField = $('.description');
+        var categoryField = $('.category');
+        var statusField = $('.status');
+        var amountField = $('.amount');
+        var currencyField = $('.hcurrency');
 
         var success = function(msg) {
             console.log(msg);
+
+            function formatMoney(cash) {
+
+                var splitCash = cash.toString().split("");
+                var lastDigits = splitCash[splitCash.length - 2] + splitCash[splitCash.length - 1];
+
+                return cash.toString().slice(0, -1).replace(/\B(?=(\d{3})+(?!\d))/g, " ").concat("," + lastDigits);
+            }
+
+            var response = $.parseJSON(JSON.stringify(msg));
+
+
+            // console.log(response.content.length);
+
+            for (var i = 0; i < response.content.length; i++) {
+
+            var _this = $('#' + i);
+            console.log(_this);
+
+            // var dateField = _this.find('.date');
+            // var descriptionField = _this.find('.description');
+            // var categoryField = _this.find('.category');
+            // var statusField = _this.find('.status');
+            // var amountField = _this.find('.amount');
+            // var currencyField = _this.find('.hcurrency');
+
+
+            // var field = _this.find();
+
+              var content = response.content[i];
+              var date = content.date;
+              var description = content.description;
+              var category = content.category;
+              var status = content.status;
+              var amount = content.amount;
+              var currency = content.currency;
+
+              // console.log(i);
+              list
+              .clone()
+              .appendTo('.data-list')
+              .css('display', 'block')
+              .attr('id',  i);
+
+              dateField.html(date);
+              descriptionField.html(description);
+              categoryField.html(category);
+              statusField.html(status);
+              amountField.html(formatMoney(amount));
+              currencyField.html(currency);
+            }
+            // console.log(content);
+
+            // dateField.html(date);
+            // descriptionField.html(description);
+            // categoryField.html(category);
+            // statusField.html(status);
+            // amountField.html(formatMoney(amount));
+            // currencyField.html(currency);
+
         }
         var error = function(msg) {
-            console.log(msg);
+          var response = JSON.stringify(msg);
+          console.log(msg);
+          console.log(response);
+
+          $('.js-getData').html('no data');
         }
 
         $(document).ready(function() {
             sendAjax("data/history", "get", "content", success, error);
         });
-
-
-
     }
 
-    //   let error = function(msg) {
-    //     console.log(msg);
-    // }
-    //
-    //   let  success = function(msg) {
-    //     console.log(msg);
-    // }
-    // $(document).ready(function () {
-    // sendAjax("data/history", "get", "content", success, error);
-    // });
-
-
-
-    //     $('#login').on('submit', sendAjax("login", "POST", {
-    //     login,
-    //     password
-    // }, success(msg), error(msg) ));
-
-    //     $(document).ready(function {
-    //     sendAjax("data/summary", "GET", {}, function(msg) {
-    //         console.log(msg);
-    //     }, error(msg));
-    // });
 
 };
 
