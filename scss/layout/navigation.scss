@@ -2,7 +2,7 @@ nav {
   &.navigation-wrapper {
     background: $dashboard-nav;
     width: 100%;
-    // min-height: 120px;
+
     .user-navigation {
       display: flex;
       justify-content: flex-start;
@@ -56,13 +56,7 @@ nav {
 
       .nav-box {
         height: 100px;
-        // width: 100%;
-        // display: flex;
-        // flex-direction: column;
-        // align-items: flex-end;
-        // align-content: flex-end;
-        // justify-content: center;
-        // padding: 15px;
+
         &:hover {
           background: $active-field;
         }
@@ -70,8 +64,6 @@ nav {
         .nav-img {
           width: auto;
           height: 50%;
-          // margin-left: auto;
-          // margin-right: auto;
           margin: 10px auto;
         }
 
