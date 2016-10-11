@@ -3,6 +3,7 @@
   overflow-x: hidden;
   overflow-y: scroll;
   background: $products-history-bg;
+  border-radius: $fields-border-radius;
   ul {
     li {
       list-style: none;

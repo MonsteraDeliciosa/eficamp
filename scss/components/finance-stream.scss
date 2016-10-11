@@ -1,0 +1,8 @@
+.finance-stream {
+  padding: $section-padding 0;
+  .stream-wrapper {
+    background: $chart-bg;
+    padding:$field-padding;
+    border-radius: $fields-border-radius;
+  }
+}
