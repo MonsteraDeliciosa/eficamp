@@ -111,20 +111,15 @@ var app = {
                 .done(function(msg) {
                     sCallback(msg);
                 })
-                .error(function(error) {
+                .error(function(msg) {
                     eCallback(msg);
                 });
         }
 
         var list = $('.clone-list');
         var clone = $('.js-clone');
-
-        var dateField = $('.date');
-        var descriptionField = $('.description');
-        var categoryField = $('.category');
-        var statusField = $('.status');
-        var amountField = $('.amount');
-        var currencyField = $('.hcurrency');
+        var firstClone = $('.first');
+        console.log(firstClone);
 
         var success = function(msg) {
             console.log(msg);
@@ -139,41 +134,9 @@ var app = {
 
             var response = $.parseJSON(JSON.stringify(msg));
 
-            // for (var i = 0; i < response.content.length; i++) {
-            //
-            //     var _this = $('#' + i);
-            //
-            //     var content = response.content[i];
-            //     var date = content.date;
-            //     var description = content.description;
-            //     var category = content.category;
-            //     var status = content.status;
-            //     var amount = content.amount;
-            //     var currency = content.currency;
-            //
-            //     list
-            //         .clone()
-            //         .appendTo('.data-list')
-            //         .addClass('js-clone')
-            //         .css('display', 'block')
-            //         .attr('id', i);
-            //
-            //     dateField.html(date);
-            //     descriptionField.html(description);
-            //     categoryField.html(category);
-            //     statusField.html(status);
-            //     amountField.html(formatMoney(amount));
-            //     currencyField.html(currency);
-            // }
+            for (var i = 0; i < response.content.length; i++) {
 
-            for (var j = response.content.length - 1; j > 0; j--) {
-
-              // console.log(response.content);
-              console.log(j);
-
-                var _this = $('#' + j);
-
-                var content = response.content[j];
+                var content = response.content[i];
                 var date = content.date;
                 var description = content.description;
                 var category = content.category;
@@ -185,10 +148,18 @@ var app = {
                     .clone()
                     .appendTo('.data-list')
                     .addClass('js-clone')
+                    .removeClass('first')
                     .css('display', 'block')
-                    .attr('id', j);
+                    .attr('id', i);
 
+                var _this = $('#' + i);
 
+                var dateField = _this.find('.date');
+                var descriptionField = _this.find('.description');
+                var categoryField = _this.find('.category');
+                var statusField = _this.find('.status');
+                var amountField = _this.find('.amount');
+                var currencyField = _this.find('.hcurrency');
 
                 dateField.html(date);
                 descriptionField.html(description);
@@ -197,6 +168,8 @@ var app = {
                 amountField.html(formatMoney(amount));
                 currencyField.html(currency);
             }
+
+            firstClone.remove();
 
 
 
