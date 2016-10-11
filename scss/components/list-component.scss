@@ -4,10 +4,27 @@
   overflow-y: scroll;
   background: $products-history-bg;
   border-radius: $fields-border-radius;
+
   ul {
+    padding: $field-padding/2;
+    margin: 0;
+
     li {
       list-style: none;
-      padding: $field-padding;
+      padding: $field-padding/2;
+
+      .columns {
+        &:last-of-type {
+          text-align: right;
+        }
+      }
+
+      span {
+        &.income {
+          font-weight: bold;
+          color: $income;
+        }
+      }
     }
   }
 }

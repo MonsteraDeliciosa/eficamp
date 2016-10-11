@@ -9,7 +9,7 @@ var app = {
     init: function() {
         this.foundation();
         this.apiLogin();
-        this.streamData();
+        this.historyData();
         this.dashboardData();
     },
 
@@ -44,7 +44,7 @@ var app = {
         });
     },
 
-    streamData: function() {
+    historyData: function() {
         function sendAjax(endpoint, method, data, sCallback, eCallback) {
             $.ajax({
                     method: method,
@@ -71,6 +71,7 @@ var app = {
             return cash.toString().slice(0, -1).replace(/\B(?=(\d{3})+(?!\d))/g, " ").concat("," + lastDigits);
         }
 
+
         var success = function(msg) {
 
             var response = $.parseJSON(JSON.stringify(msg));
@@ -79,8 +80,8 @@ var app = {
             var funds = content.funds;
             var payments = content.payments;
 
-            console.log(msg);
-            console.log(response);
+            // console.log(msg);
+            // console.log(response);
 
             balanceField.html(formatMoney(balance));
             financeStreamField.html(formatMoney(funds));
@@ -131,9 +132,34 @@ var app = {
                 return cash.toString().slice(0, -1).replace(/\B(?=(\d{3})+(?!\d))/g, " ").concat("," + lastDigits);
             }
 
+            function formatBalance(cash) {
+
+                var patt = new RegExp("outcome");
+                var res = patt.test(cash);
+
+                if (res) {
+                    console.log('outcome');
+                    cash.replace('outcome', '-');
+                } else {
+                    console.log('income');
+                    cash.replace('income', '');
+                }
+
+            }
+
+            function formatDate(date) {
+                var dateArr = date.split("-");
+                var month = dateArr[1];
+                var day = dateArr[2];
+
+                return day + "." + month;
+
+            }
+
+
             var response = $.parseJSON(JSON.stringify(msg));
 
-            for (var i = 0; i < response.content.length; i++) {
+            for (var i = response.content.length - 1; i >= 0; i--) {
 
                 var content = response.content[i];
                 var date = content.date;
@@ -160,27 +186,18 @@ var app = {
                 var amountField = _this.find('.amount');
                 var currencyField = _this.find('.hcurrency');
 
-                dateField.html(date);
+                dateField.html(formatDate(date));
                 descriptionField.html(description);
                 categoryField.html(category);
-                statusField.html(status);
+                statusField.html((status).replace('outcome', '-').replace('income', ''));
+                if (status == "income") {
+                  amountField.addClass('income');
+                }
                 amountField.html(formatMoney(amount));
                 currencyField.html(currency);
             }
 
             firstClone.remove();
-
-
-
-            // console.log(content);
-
-            // dateField.html(date);
-            // descriptionField.html(description);
-            // categoryField.html(category);
-            // statusField.html(status);
-            // amountField.html(formatMoney(amount));
-            // currencyField.html(currency);
-
         };
         var error = function(msg) {
             var response = JSON.stringify(msg);
