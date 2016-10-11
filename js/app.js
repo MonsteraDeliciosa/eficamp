@@ -119,10 +119,9 @@ var app = {
         var list = $('.clone-list');
         var clone = $('.js-clone');
         var firstClone = $('.first');
-        console.log(firstClone);
 
         var success = function(msg) {
-            console.log(msg);
+            // console.log(msg);
 
             function formatMoney(cash) {
 

@@ -61,6 +61,23 @@ nav {
           background: $active-field;
         }
 
+        &.active {
+          position: relative;
+          background: $active-field;
+
+          &:after {
+            content: '';
+            position: absolute;
+            background: $active-field;
+            bottom: -5px;
+            right: 50%;
+            width: 15px;
+            height: 15px;
+            border-radius: 8px;
+            transform: translateX(50%);
+          }
+        }
+
         .nav-img {
           width: auto;
           height: 50%;
@@ -70,20 +87,6 @@ nav {
         img,
         span {
           display: inline-block;
-        }
-      }
-
-      .active {
-        position: relative;
-        background: $active-field;
-
-        &:after {
-          width: 10px;
-          height: 10px;
-          border-radius: 5px;
-          position: absolute;
-          bottom: -5px;
-          right: 20px;
         }
       }
     }
